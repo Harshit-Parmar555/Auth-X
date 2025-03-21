@@ -1,6 +1,8 @@
-# Auth-X
+# Auth-X : Complete Authentication System
 
 Auth-X is a **MERN stack** authentication boilerplate that includes **email verification** and **password reset** features. It provides a solid foundation for authentication in web applications with modern UI components using **ShadCN**.
+
+Demo Link : [**Live**](https://auth-x-xoo5.onrender.com)
 
 ## 🚀 Features
 
