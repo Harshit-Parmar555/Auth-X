@@ -126,6 +126,7 @@ This project is **open-source** and available under the **MIT License**.
 ## 📬 Contact
 
 **Email** : parmarharshit441@gmail.com
+
 [**LinkedIn**](https://www.linkedin.com/in/harshit-parmar-47253b282)
 
 ---
