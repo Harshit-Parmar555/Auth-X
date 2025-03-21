@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Land = () => {
   const navigate = useNavigate();
   return (
-    <div className="grid h-screen grid-rows-[90%_10%]">
+    <div className="grid h-screen grid-rows-[80%_20%]">
       {/* First Row: Adjusted for Responsive Design */}
       <div className="grid grid-cols-1 md:grid-cols-[40%_60%]">
         {/* Left Side - Logo (Hidden on Small & Medium Screens) */}
@@ -15,8 +15,8 @@ const Land = () => {
         </div>
 
         {/* Right Side - Login Form */}
-        <div className="bg-black text-white flex flex-col justify-center items-center px-6 sm:px-8 md:px-10">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center">
+        <div className="bg-black text-white flex flex-col justify-center items-center gap-2 px-6 sm:px-8 md:px-10">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl sm:font-bold text-center">
             A Complete Auth System
           </h1>
           <h2 className="text-lg sm:text-xl md:text-2xl mt-3">Try Now!</h2>

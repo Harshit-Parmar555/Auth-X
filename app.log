@@ -1,11 +1,1 @@
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/\",\"status\":\"200\",\"responseTime\":\"17.522\"}","timestamp":"2025-03-21T18:31:36.523Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/assets/index-C6qYn9aX.css\",\"status\":\"200\",\"responseTime\":\"11.492\"}","timestamp":"2025-03-21T18:31:36.581Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/assets/index-BbrlR138.js\",\"status\":\"200\",\"responseTime\":\"11.970\"}","timestamp":"2025-03-21T18:31:36.590Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/api/v1/users/checkAuth\",\"status\":\"400\",\"responseTime\":\"3.658\"}","timestamp":"2025-03-21T18:31:36.686Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/vite.svg\",\"status\":\"200\",\"responseTime\":\"1.286\"}","timestamp":"2025-03-21T18:31:36.692Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/assets/Land-CC3V3aN2.js\",\"status\":\"200\",\"responseTime\":\"3.736\"}","timestamp":"2025-03-21T18:31:36.710Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/assets/button-fAYp_bAo.js\",\"status\":\"200\",\"responseTime\":\"6.359\"}","timestamp":"2025-03-21T18:31:36.714Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/assets/logo-EuzbaYVN.png\",\"status\":\"200\",\"responseTime\":\"1.857\"}","timestamp":"2025-03-21T18:31:36.740Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/assets/Signup-D6cd36ws.js\",\"status\":\"200\",\"responseTime\":\"4.932\"}","timestamp":"2025-03-21T18:31:40.413Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"GET\",\"url\":\"/assets/index.esm-B4Q8jsoo.js\",\"status\":\"200\",\"responseTime\":\"7.599\"}","timestamp":"2025-03-21T18:31:40.418Z"}
-{"level":"\u001b[32minfo\u001b[39m","message":"{\"method\":\"POST\",\"url\":\"/api/v1/users/signup\",\"status\":\"400\",\"responseTime\":\"145.441\"}","timestamp":"2025-03-21T18:31:45.689Z"}
+

@@ -26,23 +26,24 @@ app.use(cookieParser());
 
 const _dirname = path.resolve();
 
-const morganFormat = ":method :url :status :response-time ms";
+// LOGGER FOR API'S
 
-app.use(
-  morgan(morganFormat, {
-    stream: {
-      write: (message) => {
-        const logObject = {
-          method: message.split(" ")[0],
-          url: message.split(" ")[1],
-          status: message.split(" ")[2],
-          responseTime: message.split(" ")[3],
-        };
-        logger.info(JSON.stringify(logObject));
-      },
-    },
-  })
-);
+// const morganFormat = ":method :url :status :response-time ms";
+// app.use(
+//   morgan(morganFormat, {
+//     stream: {
+//       write: (message) => {
+//         const logObject = {
+//           method: message.split(" ")[0],
+//           url: message.split(" ")[1],
+//           status: message.split(" ")[2],
+//           responseTime: message.split(" ")[3],
+//         };
+//         logger.info(JSON.stringify(logObject));
+//       },
+//     },
+//   })
+// );
 
 // ROUTES
 app.use("/api/v1/users", userRouter);
