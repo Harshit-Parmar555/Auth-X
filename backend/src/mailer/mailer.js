@@ -5,6 +5,7 @@ import {
   PASSWORD_RESET_SUCCESS_TEMPLATE,
 } from "./template.js";
 
+// VERIFICATION EMAIL
 export const sendVerificationEmail = async (email, verificationToken) => {
   try {
     let transport = nodemailer.createTransport({
@@ -32,6 +33,7 @@ export const sendVerificationEmail = async (email, verificationToken) => {
   }
 };
 
+// WELCOME EMAIL
 export const sendWelcomeEmail = async (email, name) => {
   try {
     let transport = nodemailer.createTransport({
@@ -55,6 +57,7 @@ export const sendWelcomeEmail = async (email, name) => {
   }
 };
 
+// RESET PASSWORD EMAIL
 export const sendResetPasswordEmail = async (email, resetUrl) => {
   try {
     let transport = nodemailer.createTransport({
@@ -77,6 +80,7 @@ export const sendResetPasswordEmail = async (email, resetUrl) => {
   }
 };
 
+// RESET SUCCESS MAIL
 export const sendResetSuccessEmail = async (email) => {
   try {
     let transport = nodemailer.createTransport({

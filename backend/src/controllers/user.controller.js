@@ -8,6 +8,7 @@ import {
   sendResetSuccessEmail,
 } from "../mailer/mailer.js";
 
+// SIGNUP CONTROLLER
 export const signup = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -67,6 +68,7 @@ export const signup = async (req, res) => {
   }
 };
 
+// LOGIN CONTROLLER
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -106,6 +108,7 @@ export const login = async (req, res) => {
   }
 };
 
+// LOGOUT CONTROLLER
 export const logout = async (req, res) => {
   try {
     res.clearCookie("token");
@@ -118,6 +121,7 @@ export const logout = async (req, res) => {
   }
 };
 
+// CHECK AUTH CONTROLLER
 export const checkAuth = async (req, res) => {
   try {
     return res
@@ -128,6 +132,7 @@ export const checkAuth = async (req, res) => {
   }
 };
 
+// VERFIY EMAIL CONTROLLER
 export const verifyEmail = async (req, res) => {
   try {
     const { token } = req.body;
@@ -162,6 +167,7 @@ export const verifyEmail = async (req, res) => {
   }
 };
 
+// FORGET PASSWORD CONTROLLER
 export const forgetPassword = async (req, res) => {
   try {
     const { email } = req.body;
@@ -195,6 +201,7 @@ export const forgetPassword = async (req, res) => {
   }
 };
 
+// PASSWORD RESET CONTROLLER
 export const resetPassword = async (req, res) => {
   try {
     const { token } = req.params;

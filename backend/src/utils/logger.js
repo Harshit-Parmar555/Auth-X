@@ -1,6 +1,8 @@
 import { createLogger, format, transports } from "winston";
 const { combine, timestamp, json, colorize } = format;
 
+// LOGGER FUNCTIONS 
+
 const consoleLogFormat = format.combine(
   format.colorize(),
   format.printf(({ level, message, timestamp }) => {

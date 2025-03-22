@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 
+// DATABASE 
 export const connectDb = async () => {
   try {
     // Set up event listeners before connecting

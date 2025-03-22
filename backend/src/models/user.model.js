@@ -1,5 +1,7 @@
 import mongoose from "mongoose";
 
+
+// USER SCHEMA 
 const userSchema = new mongoose.Schema(
   {
     username: {
@@ -30,4 +32,5 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+// USER MODEL
 export const User = mongoose.model("user", userSchema);

@@ -1,3 +1,4 @@
+// VERIFICATION EMAIL TEMPLATE
 export const VERIFICATION_EMAIL_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
@@ -28,6 +29,7 @@ export const VERIFICATION_EMAIL_TEMPLATE = `
 </html>
 `;
 
+// PASSWORS RESET SUCCESS TEMPLATE
 export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">
@@ -65,6 +67,7 @@ export const PASSWORD_RESET_SUCCESS_TEMPLATE = `
 </html>
 `;
 
+// PASSWORD RESET REQUEST TEMPLATE
 export const PASSWORD_RESET_REQUEST_TEMPLATE = `
 <!DOCTYPE html>
 <html lang="en">

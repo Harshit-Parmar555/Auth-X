@@ -95,23 +95,21 @@ VITE_MODE=development
 npm run dev
 ```
 
-
-
 ## 📌 API Routes
 
-### **Auth Routes (********`/api/auth/users`********\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*)**
+### **Auth Routes (**\*\*\***\*`/api/auth/users`**\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*)\*\*
 
-| Method | Endpoint           | Description              |
-| ------ | ------------------ | ------------------------ |
-| POST   | `/signup`          | Register new user        |
-| POST   | `/login`           | Authenticate user        |
-| POST   | `/verifyemail`     | Verify email             |
+| Method | Endpoint          | Description              |
+| ------ | ----------------- | ------------------------ |
+| POST   | `/signup`         | Register new user        |
+| POST   | `/login`          | Authenticate user        |
+| POST   | `/verifyemail`    | Verify email             |
 | POST   | `/forgotpassword` | Send password reset link |
 | POST   | `/resetpassword`  | Reset user password      |
-| GET    | `/checkauth`       | Validate authentication  |
-| GET    | `/logout`          | Logout User              |
----
+| GET    | `/checkauth`      | Validate authentication  |
+| GET    | `/logout`         | Logout User              |
 
+---
 
 ## ✨ Contributing
 
@@ -134,4 +132,3 @@ This project is **open-source** and available under the **MIT License**.
 ---
 
 Happy Coding! 🚀
-

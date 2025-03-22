@@ -24,10 +24,10 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
+// DIRECTORY NAME FOR DEPLOYMENT
 const _dirname = path.resolve();
 
-// LOGGER FOR API'S
-
+// LOGGER FOR API'S ( CURRENTLY COMMENTED BECAUSE OF STORAGE ISSUE )
 // const morganFormat = ":method :url :status :response-time ms";
 // app.use(
 //   morgan(morganFormat, {
@@ -51,6 +51,7 @@ app.use("/api/v1/users", userRouter);
 // PORT
 const PORT = process.env.PORT || 3000;
 
+// FOR DEPLOYMENT
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(_dirname, "/frontend/dist")));
   app.get("*", (req, res) => {
@@ -58,6 +59,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
+// APP LISTINING
 connectDb()
   .then(() => {
     app.listen(PORT, () => {
