@@ -27,10 +27,12 @@ const Reset = () => {
     }
   };
   return (
-    <div className="h-screen flex flex-col justify-between bg-black text-white">
+    <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
-      <div className="flex flex-col justify-center items-center flex-grow">
-        <h1 className="text-4xl font-bold">Reset Password</h1>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-bold font-[Inter_Tight]">
+          Reset Password
+        </h1>
 
         {/* Form Fields */}
         <form
@@ -40,17 +42,12 @@ const Reset = () => {
           <Input
             type="password"
             placeholder="New Password"
-            className="border border-zinc-700 h-12"
-            {...register("password")}
-            required
+            className="border border-zinc-700 h-12 text-xs"
+            {...register("password", { required: "Password is required" })}
           />
-          <Input
-            type="password"
-            placeholder="Confirm Password"
-            className="border border-zinc-700 h-12"
-            {...register("confirmpassword")}
-            required
-          />
+          {errors.password && (
+            <p className="text-red-500 text-xs">{errors.password.message}</p>
+          )}
 
           <Button
             disabled={resetting}
@@ -62,8 +59,8 @@ const Reset = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-black text-gray-500 text-sm py-3 text-center mb-8">
-        <p>About • Privacy Policy • Terms of Service • Help Center</p>
+      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
+        <p>Privacy Policy • Terms of Service • Help Center</p>
       </div>
     </div>
   );

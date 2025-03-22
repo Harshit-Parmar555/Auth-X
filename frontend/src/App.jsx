@@ -36,6 +36,13 @@ const RedirectAuthenticatedUser = ({ children }) => {
   return children;
 };
 
+// Load Spinner
+const Spinner = () => (
+  <div className="flex items-center justify-center h-screen">
+    <Loader className="w-12 h-12 animate-spin text-blue-500" />
+  </div>
+);
+
 const App = () => {
   const { checkAuth, checkingAuth, isAuthenticated } = useAuthStore();
   useEffect(() => {
@@ -45,7 +52,7 @@ const App = () => {
   if (checkingAuth) {
     return (
       <div className="h-screen flex justify-center items-center bg-black text-white">
-        <Loader className="w-10 h-10 animate-spin" />
+        <Spinner />
       </div>
     );
   }
@@ -57,7 +64,7 @@ const App = () => {
       <Suspense
         fallback={
           <div className="h-screen flex justify-center items-center text-white bg-black">
-            Loading...
+            <Spinner />
           </div>
         }
       >
@@ -103,7 +110,7 @@ const App = () => {
             }
           />
           <Route
-            path="/reset-password/:token"
+            path="/resetpassword/:token"
             element={
               <RedirectAuthenticatedUser>
                 <ResetPage />

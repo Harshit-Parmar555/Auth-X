@@ -2,7 +2,7 @@ import React from "react";
 import { Input } from "../components/ui/input";
 import { Button } from "../components/ui/button";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore.js";
 
 const Verify = () => {
@@ -25,10 +25,12 @@ const Verify = () => {
     }
   };
   return (
-    <div className="h-screen flex flex-col justify-between bg-black text-white">
+    <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
-      <div className="flex flex-col justify-center items-center flex-grow">
-        <h1 className="text-4xl font-bold">Verify Your Email</h1>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-bold font-[Inter_Tight]">
+          Verify Your Email
+        </h1>
 
         {/* Form Fields */}
         <form
@@ -38,11 +40,12 @@ const Verify = () => {
           <Input
             type="text"
             placeholder="Enter Verification Code"
-            className="border border-zinc-700 h-12"
-            {...register("token")}
-            required
+            className="border border-zinc-700 h-12 text-xs"
+            {...register("token", { required: "Token is required" })}
           />
-
+          {errors.token && (
+            <p className="text-red-500 text-xs">{errors.token.message}</p>
+          )}
           <Button
             disabled={verifing}
             className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full"
@@ -50,18 +53,11 @@ const Verify = () => {
             {verifing ? "Wait . . ." : "Verify"}
           </Button>
         </form>
-
-        <div className="mt-4 text-gray-500">
-          Didn't receive the code?{" "}
-          <span className="text-blue-600 font-bold cursor-pointer">
-            Resend Code
-          </span>
-        </div>
       </div>
 
       {/* Footer */}
-      <div className="bg-black text-gray-500 text-sm py-3 text-center mb-8">
-        <p>About • Privacy Policy • Terms of Service • Help Center</p>
+      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
+        <p>Privacy Policy • Terms of Service • Help Center</p>
       </div>
     </div>
   );

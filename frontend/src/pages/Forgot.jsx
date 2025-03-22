@@ -3,7 +3,7 @@ import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { useForm } from "react-hook-form";
 import { useAuthStore } from "../store/useAuthStore.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Forgot = () => {
   const navigate = useNavigate();
@@ -22,23 +22,27 @@ const Forgot = () => {
     }
   };
   return (
-    <div className="h-screen flex flex-col justify-between bg-black text-white">
+    <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
-      <div className="flex flex-col justify-center items-center flex-grow">
-        <h1 className="text-4xl font-bold">Forgot Password</h1>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-bold font-[Inter_Tight]">
+          Forgot Password
+        </h1>
 
         {/* Form Fields */}
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className="mt-6 w-80 flex flex-col gap-6"
+          className="mt-6 w-80 flex flex-col gap-4"
         >
           <Input
             type="email"
             placeholder="Email"
-            className="border border-zinc-700 h-12"
-            {...register("email")}
-            required
+            className="border border-zinc-700 h-12 text-xs"
+            {...register("email", { required: "Email is required" })}
           />
+          {errors.email && (
+            <p className="text-red-500 text-xs">{errors.email.message}</p>
+          )}
 
           <Button
             disabled={requestingResetUrl}
@@ -48,20 +52,16 @@ const Forgot = () => {
           </Button>
         </form>
 
-        <div className="mt-4 text-gray-500">
+        <div className="mt-6 text-gray-500 text-xs">
           Remember your password?{" "}
-          <span
-            onClick={() => navigate("/login")}
-            className="text-blue-600 font-bold cursor-pointer"
-          >
+          <Link to="/login" className="text-blue-600 font-bold cursor-pointer">
             Login
-          </span>
+          </Link>
         </div>
       </div>
 
-      {/* Footer */}
-      <div className="bg-black text-gray-500 text-sm py-3 text-center mb-8">
-        <p>About • Privacy Policy • Terms of Service • Help Center</p>
+      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
+        <p>Privacy Policy • Terms of Service • Help Center</p>
       </div>
     </div>
   );

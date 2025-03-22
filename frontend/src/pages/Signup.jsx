@@ -2,7 +2,7 @@ import React from "react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useAuthStore } from "../store/useAuthStore.js";
 
 const Signup = () => {
@@ -28,10 +28,12 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-between bg-black text-white">
+    <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
-      <div className="flex flex-col justify-center items-center flex-grow">
-        <h1 className="text-4xl font-bold">Sign Up</h1>
+      <div className="flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-bold font-[Inter_Tight]">
+          Welcome to Auth- <span className="text-blue-600">X</span>
+        </h1>
         <form
           onSubmit={handleSubmit(onSubmit)}
           className="mt-6 w-80 flex flex-col gap-6"
@@ -41,7 +43,7 @@ const Signup = () => {
             <Input
               type="text"
               placeholder="Username"
-              className="border border-zinc-700 h-12"
+              className="border border-zinc-700 h-12 text-sm"
               {...register("username", {
                 required: "Username is required",
                 minLength: {
@@ -62,7 +64,7 @@ const Signup = () => {
             <Input
               type="email"
               placeholder="Email"
-              className="border border-zinc-700 h-12"
+              className="border border-zinc-700 h-12 text-sm"
               {...register("email", {
                 required: "Email is required",
                 pattern: {
@@ -83,7 +85,7 @@ const Signup = () => {
             <Input
               type="password"
               placeholder="Password"
-              className="border border-zinc-700 h-12"
+              className="border border-zinc-700 h-12 text-sm"
               {...register("password", {
                 required: "Password is required",
                 minLength: {
@@ -113,20 +115,17 @@ const Signup = () => {
         </form>
 
         {/* Login Link */}
-        <div className="mt-4 text-gray-500">
+        <div className="mt-4 text-gray-500 font-[Inter_Tight] text-sm">
           Already have an account?{" "}
-          <span
-            onClick={() => navigate("/login")}
-            className="text-blue-600 font-bold cursor-pointer"
-          >
+          <Link to="/login" className="text-blue-600 font-bold cursor-pointer">
             Login
-          </span>
+          </Link>
         </div>
       </div>
 
       {/* Footer */}
-      <div className="bg-black text-gray-500 text-sm py-3 text-center mb-8">
-        <p>About • Privacy Policy • Terms of Service • Help Center</p>
+      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
+        <p>Privacy Policy • Terms of Service • Help Center</p>
       </div>
     </div>
   );
