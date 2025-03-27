@@ -12,7 +12,7 @@ import { protectedRoute } from "../middlewares/auth.js";
 
 const userRouter = express.Router();
 
-// USER  ROUTES
+// User routes
 userRouter.post("/signup", signup);
 userRouter.post("/login", login);
 userRouter.get("/logout", logout);

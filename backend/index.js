@@ -11,10 +11,10 @@ import path from "path";
 
 import { connectDb } from "./src/db/connect.js";
 
-// EXPRESS APP
+// Express app
 const app = express();
 
-// MIDDLEWARES
+// Middlewares
 app.use(
   cors({
     origin: "http://localhost:5173",
@@ -24,10 +24,10 @@ app.use(
 app.use(express.json());
 app.use(cookieParser());
 
-// DIRECTORY NAME FOR DEPLOYMENT
+// Directory name for deployment
 const _dirname = path.resolve();
 
-// LOGGER FOR API'S ( CURRENTLY COMMENTED BECAUSE OF STORAGE ISSUE )
+// Logger for api's ( currently commented due to storage issue )
 // const morganFormat = ":method :url :status :response-time ms";
 // app.use(
 //   morgan(morganFormat, {
@@ -45,13 +45,13 @@ const _dirname = path.resolve();
 //   })
 // );
 
-// ROUTES
+// Routes
 app.use("/api/v1/users", userRouter);
 
-// PORT
+// Port
 const PORT = process.env.PORT || 3000;
 
-// FOR DEPLOYMENT
+// For deployment
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(_dirname, "/frontend/dist")));
   app.get("*", (req, res) => {
@@ -59,7 +59,7 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-// APP LISTINING
+// App listening
 connectDb()
   .then(() => {
     app.listen(PORT, () => {

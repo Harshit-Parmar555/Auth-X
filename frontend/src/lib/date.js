@@ -1,4 +1,4 @@
-// FORMAT MONGO DB DATE TO YYYY-MM-DD
+// Format mongo Db date 
 export const formatDate = (dateString) => {
   const date = new Date(dateString);
   if (isNaN(date.getTime())) {

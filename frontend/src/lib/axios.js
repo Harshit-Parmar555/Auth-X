@@ -5,8 +5,7 @@ const API_URL =
     ? "http://localhost:4000/api/v1"
     : "/api/v1";
 
-
-// AXIOS INSTANCE FOR API CALLS
+// Axios instance for api's call
 
 export const axiosInstance = axios.create({
   baseURL: API_URL,

@@ -3,6 +3,7 @@ import {
   VERIFICATION_EMAIL_TEMPLATE,
   PASSWORD_RESET_REQUEST_TEMPLATE,
   PASSWORD_RESET_SUCCESS_TEMPLATE,
+  WELCOME_EMAIL_TEMPLATE,
 } from "./template.js";
 
 // VERIFICATION EMAIL
@@ -48,8 +49,7 @@ export const sendWelcomeEmail = async (email, name) => {
     const mailOptions = {
       from: "test@test.com",
       to: email,
-      text: `Hello ${name},\n\nWelcome to AuthX! We're excited to have you on board.`,
-      html: `<p>Hello <strong>${name}</strong>,</p><p>Welcome to <strong>AuthX</strong>! We're excited to have you on board.</p>`,
+      html: WELCOME_EMAIL_TEMPLATE.replace("{userName}", name),
     };
     const response = await transport.sendMail(mailOptions);
   } catch (error) {

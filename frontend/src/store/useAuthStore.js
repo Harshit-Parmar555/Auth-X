@@ -2,8 +2,7 @@ import { create } from "zustand";
 import { axiosInstance } from "../lib/axios";
 import toast from "react-hot-toast";
 
-
-// ZUSTAND STORE FOR STATE AND FUNCTIONS MANAGEMENT
+// Zustand store for state and function management
 export const useAuthStore = create((set, get) => ({
   user: null,
   isAuthenticated: false,
