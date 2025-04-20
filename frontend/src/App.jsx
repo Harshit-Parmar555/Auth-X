@@ -12,6 +12,8 @@ const ResetPage = React.lazy(() => import("./pages/Reset"));
 const ForgetPage = React.lazy(() => import("./pages/Forgot"));
 const DashBoard = React.lazy(() => import("./pages/DashBoard"));
 const NotFoundPage = React.lazy(() => import("./pages/NotFound"));
+const PrivacyPage = React.lazy(() => import("./pages/Privacy.jsx"));
+const TermsPage = React.lazy(() => import("./pages/Terms.jsx"));
 
 import { useAuthStore } from "./store/useAuthStore.js";
 
@@ -37,11 +39,7 @@ const RedirectAuthenticatedUser = ({ children }) => {
 };
 
 // Load Spinner
-const Spinner = () => (
-  <div className="flex items-center justify-center h-screen">
-    <Loader className="w-12 h-12 animate-spin text-blue-500" />
-  </div>
-);
+import Spinner from "./customs/Spinner.jsx";
 
 const App = () => {
   const { checkAuth, checkingAuth, isAuthenticated } = useAuthStore();
@@ -123,6 +121,22 @@ const App = () => {
               <ProtectedRoute>
                 <DashBoard />
               </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/privacy"
+            element={
+              <RedirectAuthenticatedUser>
+                <PrivacyPage />
+              </RedirectAuthenticatedUser>
+            }
+          />
+          <Route
+            path="/terms"
+            element={
+              <RedirectAuthenticatedUser>
+                <TermsPage />
+              </RedirectAuthenticatedUser>
             }
           />
           <Route path="*" element={<NotFoundPage />} />

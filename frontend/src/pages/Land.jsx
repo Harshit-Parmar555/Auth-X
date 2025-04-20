@@ -1,55 +1,63 @@
 import React from "react";
-import logo from "../assets/logo.png";
 import { Button } from "../components/ui/button";
 import { useNavigate } from "react-router-dom";
 
 const Land = () => {
   const navigate = useNavigate();
+
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-black text-white px-6 sm:px-8 md:px-10">
+    <div className="h-screen flex flex-col items-center justify-between bg-black text-white px-6 sm:px-8 md:px-10 py-10 relative overflow-hidden">
       {/* Main Content */}
-      <div className="flex flex-col justify-center items-center gap-2">
-        <h1 className="font-[Inter_Tight] text-3xl sm:text-4xl md:text-5xl sm:font-bold text-center">
-          Auth- <span className="text-blue-600">X</span> : A Complete Auth
-          System
+      <div className="flex flex-col justify-center items-center gap-4 flex-1">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center font-[Inter_Tight] bg-gradient-to-t from-zinc-400 to-white bg-clip-text text-transparent leading-tight">
+          Auth-<span className="text-blue-600">X</span> : A Complete Auth System
         </h1>
-        <h2 className="font-[Inter_Tight] text-lg sm:text-xl md:text-2xl mt-3">
-          Try Now!
-        </h2>
-        <Button
-          onClick={() => navigate("/signup")}
-          className="mt-6 sm:mt-8 bg-blue-400 text-white px-4 sm:px-6 py-2 rounded-full w-full sm:w-72 hover:bg-blue-500 transition-colors duration-200 ease-in-out cursor-pointer text-sm sm:text-base"
-        >
-          Create account
-        </Button>
-        <p className="mt-3 sm:mt-4 text-gray-400 text-xs sm:text-sm text-center">
-          By signing up, you agree to the{" "}
-          <a href="#" className="text-blue-400">
-            Terms of Service
-          </a>{" "}
-          and{" "}
-          <a href="#" className="text-blue-400">
-            Privacy Policy
-          </a>
-          .
+
+        <p className="text-gray-400 text-sm sm:text-base mt-2 text-center">
+          A MERN stack authentication boilerplate that includes email
+          verification and password reset features.
         </p>
-        <h3 className="mt-4 sm:mt-6 text-xs sm:text-sm">
-          Already have an account?
-        </h3>
-        <Button
-          onClick={() => navigate("/login")}
-          className="mt-3 sm:mt-4 border border-zinc-800 bg-black text-white px-4 sm:px-6 py-2 rounded-full w-full sm:w-72 hover:bg-zinc-900 transition-colors duration-200 ease-in-out cursor-pointer text-sm sm:text-base"
-        >
-          Login
-        </Button>
+
+        <div className="mt-6 sm:mt-8 w-full flex flex-col items-center gap-3">
+          <Button
+            onClick={() => navigate("/signup")}
+            className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-md w-full sm:w-80 text-sm sm:text-base transition duration-300 ease-in-out"
+          >
+            Create Account
+          </Button>
+
+          <p className="text-xs sm:text-xs text-gray-400 text-center max-w-xs">
+            By signing up, you agree to the{" "}
+            <a href="/terms" className="text-blue-400 underline">
+              Terms of Service
+            </a>{" "}
+            and{" "}
+            <a href="/privacy" className="text-blue-400 underline">
+              Privacy Policy
+            </a>
+            .
+          </p>
+
+          <div className="mt-2 text-center flex flex-col items-center gap-2">
+            <p className="text-sm text-gray-300">Already have an account?</p>
+            <Button
+              onClick={() => navigate("/login")}
+              variant="outline"
+              className="mt-2 border border-zinc-700 bg-transparent text-white hover:text-white px-6 py-2 rounded-md w-full sm:w-80 hover:bg-zinc-950 transition duration-300 text-sm sm:text-base"
+            >
+              Login
+            </Button>
+          </div>
+        </div>
       </div>
+
       {/* Footer */}
-      <div className="text-gray-200 text-xs sm:text-sm flex justify-center items-center py-4 w-full absolute bottom-8">
-        <p className="text-center">
-          Made With ❤️ |{" "}
-          <span className="font-[Inter_Tight]">HARSHIT X CODES</span>
+      <footer className="text-gray-400 text-xs sm:text-sm text-center w-full absolute bottom-8">
+        <p>
+          Made with ❤️ by{" "}
+          <span className="font-[Inter_Tight] text-white">HARSHIT X CODES</span>
         </p>
-      </div>
+      </footer>
     </div>
   );
 };
