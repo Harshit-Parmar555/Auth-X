@@ -97,7 +97,7 @@ npm run dev
 
 ## 📌 API Routes
 
-### **Auth Routes (**\*\*\***\*`/api/auth/users`**\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*)\*\*
+### **Auth Routes (`/api/v1/users`)
 
 | Method | Endpoint          | Description              |
 | ------ | ----------------- | ------------------------ |
