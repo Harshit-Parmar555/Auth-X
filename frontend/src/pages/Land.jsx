@@ -6,7 +6,17 @@ const Land = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="h-screen flex flex-col items-center justify-between bg-black text-white px-6 sm:px-8 md:px-10 py-10 relative overflow-hidden">
+    <div
+      className="h-screen flex flex-col items-center justify-between text-white px-6 sm:px-8 md:px-10 py-10 relative overflow-hidden"
+      style={{
+        backgroundColor: "#000",
+        backgroundImage: `
+        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
+      `,
+        backgroundSize: "40px 40px",
+      }}
+    >
       {/* Main Content */}
       <div className="flex flex-col justify-center items-center gap-4 flex-1">
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-center font-[Inter_Tight] bg-gradient-to-t from-zinc-400 to-white bg-clip-text text-transparent leading-tight">
@@ -52,10 +62,10 @@ const Land = () => {
       </div>
 
       {/* Footer */}
-      <footer className="text-gray-400 text-xs sm:text-sm text-center w-full absolute bottom-8">
+      <footer className="text-gray-400 text-xs sm:text-[12px] text-center w-full absolute bottom-8">
         <p>
-          Made with ❤️ by{" "}
-          <span className="font-[Inter_Tight] text-white">HARSHIT X CODES</span>
+          Made with ❤️ {" "}
+          <span className="font-[Inter_Tight] font-bold text-white">HARSHIT X CODES</span>
         </p>
       </footer>
     </div>
