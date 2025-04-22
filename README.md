@@ -97,7 +97,7 @@ npm run dev
 
 ## 📌 API Routes
 
-### **Auth Routes (**\*\*\***\*`/api/auth/users`**\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*\*)\*\*
+### **Auth Routes (`/api/v1/users`)
 
 | Method | Endpoint          | Description              |
 | ------ | ----------------- | ------------------------ |
@@ -119,7 +119,7 @@ Feel free to contribute by opening a **Pull Request** or **Issue**!
 
 ## 🛡️ License
 
-This project is **open-source** and available under the **MIT License**.
+💡 Have suggestions or found a bug? Open a pull request or create an issue — contributions are always welcome!
 
 ---
 
