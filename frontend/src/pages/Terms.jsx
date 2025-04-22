@@ -2,7 +2,7 @@ import React from "react";
 
 const Terms = () => {
   return (
-    <div className="min-h-screen px-6 sm:px-10 md:px-20 py-12 bg-black text-white font-sans">
+    <div className="min-h-dvh px-6 sm:px-10 md:px-20 py-12 bg-black text-white font-sans">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-center font-[Inter_Tight]">
           Terms of Use

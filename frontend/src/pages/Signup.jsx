@@ -28,7 +28,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col items-center justify-center bg-black text-white">
+    <div className="h-dvh flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-3xl font-bold font-[Inter_Tight]">

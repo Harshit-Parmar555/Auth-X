@@ -19,7 +19,7 @@ const DashBoard = () => {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col justify-center items-center bg-black text-white px-4">
+    <div className="w-full h-dvh flex flex-col justify-center items-center bg-black text-white px-4">
       <div className="w-[90%] sm:w-[75%] md:w-[50%] lg:w-[30%] p-6 bg-zinc-950 rounded-lg shadow-lg flex flex-col items-center gap-6 border border-zinc-800">
         <h1 className="text-xl sm:text-2xl font-bold text-center mb-4">
           Dashboard

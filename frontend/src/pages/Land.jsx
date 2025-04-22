@@ -7,7 +7,7 @@ const Land = () => {
 
   return (
     <div
-      className="h-screen flex flex-col items-center justify-between text-white px-6 sm:px-8 md:px-10 py-10 relative overflow-hidden"
+      className="h-dvh flex flex-col items-center justify-between text-white px-6 sm:px-8 md:px-10 py-10 relative overflow-hidden"
       style={{
         backgroundColor: "#000",
         backgroundImage: `
@@ -64,8 +64,10 @@ const Land = () => {
       {/* Footer */}
       <footer className="text-gray-400 text-xs sm:text-[12px] text-center w-full absolute bottom-8">
         <p>
-          Made with ❤️ {" "}
-          <span className="font-[Inter_Tight] font-bold text-white">HARSHIT X CODES</span>
+          Made with ❤️{" "}
+          <span className="font-[Inter_Tight] font-bold text-white">
+            HARSHIT X CODES
+          </span>
         </p>
       </footer>
     </div>
