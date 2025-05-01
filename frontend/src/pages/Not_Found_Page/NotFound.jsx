@@ -1,6 +1,10 @@
 import React from "react";
-import { Button } from "../components/ui/button";
+
 import { useNavigate } from "react-router-dom";
+
+// components
+import { Button } from "../../components/ui/button";
+import Footer from "../../customs/Footer";
 
 const NotFound = () => {
   const navigate = useNavigate();
@@ -8,23 +12,21 @@ const NotFound = () => {
     <div className="h-dvh flex flex-col items-center justify-center bg-black text-white">
       {/* Content Section */}
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-4xl font-bold font-[Inter_Tight]">404</h1>
-        <p className="text-3xl font-bold font-[Inter_Tight] text-zinc-400">
+        <h1 className="text-4xl font-bold font-[Sora] text-blue-600">404</h1>
+        <p className="text-3xl font-bold font-[Sora] text-zinc-400">
           Page Not Found
         </p>
 
         <Button
           onClick={() => navigate("/")}
-          className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-sm"
+          className="mt-6 bg-blue-500 text-white px-6 py-2 rounded-md font-[Space_Grotesk] cursor-pointer"
         >
           Go Home
         </Button>
       </div>
 
       {/* Footer */}
-      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
-        <p>Privacy Policy • Terms of Service • Help Center</p>
-      </div>
+      <Footer />
     </div>
   );
 };

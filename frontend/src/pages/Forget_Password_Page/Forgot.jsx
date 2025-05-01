@@ -1,9 +1,15 @@
 import React from "react";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
+
 import { useForm } from "react-hook-form";
-import { useAuthStore } from "../store/useAuthStore.js";
 import { Link, useNavigate } from "react-router-dom";
+
+// components
+import Footer from "../../customs/Footer";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+
+// stores
+import { useAuthStore } from "../../store/useAuthStore.js";
 
 const Forgot = () => {
   const navigate = useNavigate();
@@ -25,8 +31,8 @@ const Forgot = () => {
     <div className="h-dvh flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold font-[Inter_Tight]">
-          Forgot Password
+        <h1 className="text-3xl font-bold font-[Sora]">
+          Forgot <span className="text-blue-600">Password</span>
         </h1>
 
         {/* Form Fields */}
@@ -37,7 +43,7 @@ const Forgot = () => {
           <Input
             type="email"
             placeholder="Email"
-            className="border border-zinc-700 h-12 text-xs"
+            className="border border-zinc-700 h-12 text-xs font-[Inter]"
             {...register("email", { required: "Email is required" })}
           />
           {errors.email && (
@@ -46,13 +52,13 @@ const Forgot = () => {
 
           <Button
             disabled={requestingResetUrl}
-            className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full"
+            className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md cursor-pointer"
           >
             {requestingResetUrl ? "Wait . . ." : "Request Reset Link"}
           </Button>
         </form>
 
-        <div className="mt-6 text-gray-500 text-xs">
+        <div className="mt-6 text-gray-500 text-xs font-[Inter]">
           Remember your password?{" "}
           <Link to="/login" className="text-blue-600 font-bold cursor-pointer">
             Login
@@ -60,9 +66,7 @@ const Forgot = () => {
         </div>
       </div>
 
-      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
-        <p>Privacy Policy • Terms of Service • Help Center</p>
-      </div>
+      <Footer />
     </div>
   );
 };

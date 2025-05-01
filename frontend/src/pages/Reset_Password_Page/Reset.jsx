@@ -1,10 +1,17 @@
 import React from "react";
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
+
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useParams } from "react-router-dom";
-import { useAuthStore } from "../store/useAuthStore";
+
+
+// components
+import Footer from "../../customs/Footer";
+import { Input } from "../../components/ui/input";
+import { Button } from "../../components/ui/button";
+
+// stores
+import { useAuthStore } from "../../store/useAuthStore";
 
 const Reset = () => {
   const { token } = useParams();
@@ -30,8 +37,8 @@ const Reset = () => {
     <div className="h-dvh flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold font-[Inter_Tight]">
-          Reset Password
+        <h1 className="text-3xl font-bold font-[Sora]">
+          Reset <span className="text-blue-600">Password</span>
         </h1>
 
         {/* Form Fields */}
@@ -42,7 +49,7 @@ const Reset = () => {
           <Input
             type="password"
             placeholder="New Password"
-            className="border border-zinc-700 h-12 text-xs"
+            className="border border-zinc-700 h-12 text-xs font-[Inter]"
             {...register("password", { required: "Password is required" })}
           />
           {errors.password && (
@@ -51,7 +58,7 @@ const Reset = () => {
 
           <Button
             disabled={resetting}
-            className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full"
+            className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md font-[Space_Grotesk] cursor-pointer"
           >
             {resetting ? "Wait. . ." : "Reset Password"}
           </Button>
@@ -59,9 +66,7 @@ const Reset = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
-        <p>Privacy Policy • Terms of Service • Help Center</p>
-      </div>
+     <Footer/>
     </div>
   );
 };

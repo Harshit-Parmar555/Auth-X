@@ -1,9 +1,15 @@
 import React from "react";
-import { Button } from "../components/ui/button";
-import { Input } from "../components/ui/input";
+
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
-import { useAuthStore } from "../store/useAuthStore.js";
+
+// components
+import Footer from "../../customs/Footer";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+
+// stores
+import { useAuthStore } from "../../store/useAuthStore.js";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -31,7 +37,7 @@ const Signup = () => {
     <div className="h-dvh flex flex-col items-center justify-center bg-black text-white">
       {/* Form Section */}
       <div className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold font-[Inter_Tight]">
+        <h1 className="text-3xl font-bold font-[Sora]">
           Welcome to Auth- <span className="text-blue-600">X</span>
         </h1>
         <form
@@ -43,7 +49,7 @@ const Signup = () => {
             <Input
               type="text"
               placeholder="Username"
-              className="border border-zinc-700 h-12 text-sm"
+              className="border border-zinc-700 h-12 text-sm font-[Inter]"
               {...register("username", {
                 required: "Username is required",
                 minLength: {
@@ -64,7 +70,7 @@ const Signup = () => {
             <Input
               type="email"
               placeholder="Email"
-              className="border border-zinc-700 h-12 text-sm"
+              className="border border-zinc-700 h-12 text-sm font-[Inter]"
               {...register("email", {
                 required: "Email is required",
                 pattern: {
@@ -85,7 +91,7 @@ const Signup = () => {
             <Input
               type="password"
               placeholder="Password"
-              className="border border-zinc-700 h-12 text-sm"
+              className="border border-zinc-700 h-12 text-sm font-[Inter]"
               {...register("password", {
                 required: "Password is required",
                 minLength: {
@@ -108,14 +114,14 @@ const Signup = () => {
           {/* Submit Button */}
           <Button
             disabled={signing}
-            className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-full"
+            className="mt-4 bg-blue-500 text-white px-6 py-2 rounded-md font-[Space_Grotesk] cursor-pointer"
           >
             {signing ? "Wait . . ." : "Sign Up"}
           </Button>
         </form>
 
         {/* Login Link */}
-        <div className="mt-4 text-gray-500 font-[Inter_Tight] text-sm">
+        <div className="mt-4 text-gray-500 font-[Inter] text-xs">
           Already have an account?{" "}
           <Link to="/login" className="text-blue-600 font-bold cursor-pointer">
             Login
@@ -124,9 +130,7 @@ const Signup = () => {
       </div>
 
       {/* Footer */}
-      <div className="bg-black text-gray-500 text-xs py-3 text-center absolute bottom-8">
-        <p>Privacy Policy • Terms of Service • Help Center</p>
-      </div>
+     <Footer/>
     </div>
   );
 };
