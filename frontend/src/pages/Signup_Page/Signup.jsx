@@ -7,6 +7,7 @@ import { useNavigate, Link } from "react-router-dom";
 import Footer from "../../customs/Footer";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
+import PasswordStrengthMeter from "../../customs/PasswordStrengthMeter";
 
 // stores
 import { useAuthStore } from "../../store/useAuthStore.js";
@@ -109,6 +110,7 @@ const Signup = () => {
                 {errors.password.message}
               </p>
             )}
+            <PasswordStrengthMeter password={watch("password")} />
           </div>
 
           {/* Submit Button */}
@@ -130,7 +132,7 @@ const Signup = () => {
       </div>
 
       {/* Footer */}
-     <Footer/>
+      <Footer />
     </div>
   );
 };
