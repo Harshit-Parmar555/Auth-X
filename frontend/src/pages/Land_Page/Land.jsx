@@ -11,8 +11,8 @@ const Land = () => {
       style={{
         backgroundColor: "#000",
         backgroundImage: `
-        linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
+        linear-gradient(to right, rgba(255, 255, 255, 0.10) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.10) 1px, transparent 1px)
       `,
         backgroundSize: "40px 40px",
       }}
@@ -48,14 +48,13 @@ const Land = () => {
             .
           </p>
 
-          <div className="mt-2 text-center flex flex-col items-center gap-2">
+          <div className="mt-6 sm:mt-8 w-full flex flex-col items-center gap-3">
             <p className="text-sm text-gray-300 font-[Inter]">
               Already have an account?
             </p>
             <Button
               onClick={() => navigate("/login")}
-              variant="outline"
-              className="mt-2 border border-zinc-700 bg-transparent text-white font-[Space_Grotesk] hover:text-white px-6 py-2 rounded-md w-full sm:w-80 hover:bg-zinc-950 transition duration-300 text-sm sm:text-base cursor-pointer"
+              className="bg-zinc-900 hover:bg-zinc-800 border-[1px] border-zinc-800 text-white font-[Space_Grotesk] px-6 py-2 rounded-md w-full sm:w-80 text-sm sm:text-base transition duration-300 ease-in-out cursor-pointer"
             >
               Login
             </Button>

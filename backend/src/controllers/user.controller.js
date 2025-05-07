@@ -83,6 +83,13 @@ export const login = async (req, res) => {
         .status(400)
         .json({ success: false, message: "User not found" });
     }
+
+    if (!user.isVerified) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Email not verified" });
+    }
+
     const isValidPassword = await bcrypt.compare(password, user.password);
     if (!isValidPassword) {
       return res

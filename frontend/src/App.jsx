@@ -1,7 +1,6 @@
 import React, { Suspense, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
-import { Loader } from "lucide-react";
 
 // PAGES IMPORT
 const LandingPage = React.lazy(() => import("./pages/Land_Page/Land"));
@@ -9,12 +8,19 @@ const SignupPage = React.lazy(() => import("./pages/Signup_Page/Signup.jsx"));
 const LoginPage = React.lazy(() => import("./pages/Login_Page/Login.jsx"));
 const VerifyPage = React.lazy(() => import("./pages/Verify_Email_Page/Verify"));
 const ResetPage = React.lazy(() => import("./pages/Reset_Password_Page/Reset"));
-const ForgetPage = React.lazy(() => import("./pages/Forget_Password_Page/Forgot"));
-const DashBoard = React.lazy(() => import("./pages/Dashboard_Page/DashBoard.jsx"));
-const NotFoundPage = React.lazy(() => import("./pages/Not_Found_Page/NotFound"));
+const ForgetPage = React.lazy(() =>
+  import("./pages/Forget_Password_Page/Forgot")
+);
+const DashBoard = React.lazy(() =>
+  import("./pages/Dashboard_Page/DashBoard.jsx")
+);
+const NotFoundPage = React.lazy(() =>
+  import("./pages/Not_Found_Page/NotFound")
+);
 const PrivacyPage = React.lazy(() => import("./pages/T&P_Page/Privacy.jsx"));
 const TermsPage = React.lazy(() => import("./pages/T&P_Page/Terms.jsx"));
 
+// STORE IMPORT
 import { useAuthStore } from "./store/useAuthStore.js";
 
 // PROTECTED ROUTE
@@ -42,7 +48,7 @@ const RedirectAuthenticatedUser = ({ children }) => {
 import Spinner from "./customs/Spinner.jsx";
 
 const App = () => {
-  const { checkAuth, checkingAuth, isAuthenticated } = useAuthStore();
+  const { checkAuth, checkingAuth } = useAuthStore();
   useEffect(() => {
     checkAuth();
   }, []);
@@ -60,24 +66,23 @@ const App = () => {
       <Toaster
         position="top-right"
         toastOptions={{
-          // Global styles for all toasts
           style: {
-            background: "#111", // Matches your dark theme
+            background: "#111",
             color: "#fff",
             border: "1px solid #333",
             fontFamily: "Inter, sans-serif",
-            fontSize: "0.875rem", // equivalent to text-sm
+            fontSize: "0.875rem",
             padding: "12px 16px",
           },
           success: {
             iconTheme: {
-              primary: "#4ade80", // green-400
+              primary: "#4ade80",
               secondary: "#000",
             },
           },
           error: {
             iconTheme: {
-              primary: "#f87171", // red-400
+              primary: "#f87171",
               secondary: "#000",
             },
           },
